@@ -23,7 +23,7 @@ export default {
         { time: '9 AM', icon: '01d', temperature: 22 },
         { time: '10 AM', icon: '02d', temperature: 22 },
       ],
-      
+
     };
   },
   computed: {
@@ -48,20 +48,20 @@ export default {
     },
   },
   mounted() {
-    const connectedStatus=window.navigator.onLine? 'online' : 'offline';
+    const connectedStatus = window.navigator.onLine ? 'online' : 'offline';
     console.log(`connected ${connectedStatus}`);
     Toastify({
-      text:`Connected ${connectedStatus}`,
-      duration:3000,
-      gravity:'top',
-      position:"center",
-      backgroundColor:'white',
-      
+      text: `Connected ${connectedStatus}`,
+      duration: 3000,
+      gravity: 'top',
+      position: "center",
+      backgroundColor: 'white',
+
 
     }).showToast();
-    const toast=document.querySelector(".toastify")
-    if (toast){
-      toast.style.color='blue'
+    const toast = document.querySelector(".toastify")
+    if (toast) {
+      toast.style.color = 'blue'
     }
     this.fetchData()
     this.getLocation();
@@ -127,7 +127,7 @@ export default {
           </select>
         </div>
 
-        <!-- Location and temperature -->
+        <!-- Icon and temperature -->
         <div class="location-temperature">
           <div class="flex items-center" style="margin-left: -1.5rem">
             <img v-if="data.weather && data.weather.length > 0"
@@ -139,22 +139,24 @@ export default {
         </div>
 
 
-        <!-- Weather description -->
+       <!--Weather description -->
         <div class="weather-description text-lg mb-2 mt-1">
           {{ data.weather?.[0]?.description }}
 
         </div>
+
+        <!-- Location -->
         <div class="location text-lg mb-2">{{ data.name }}</div>
 
-  
+
 
         <!-- Additional Weather Information -->
-<div class="additional-info text-sm">
-  <div class="mb-auto mt-auto">{{ getCurrentDate() }}</div>
-  <div class="mb-auto mt-3" v-if="data.main && data.main.feels_like !== undefined">
-    Feels Like: {{ data.main.feels_like }} | Sunset: 18:20
-  </div>
-</div>
+        <div class="additional-info text-sm">
+          <div class="mb-auto mt-auto">{{ getCurrentDate() }}</div>
+          <div class="mb-auto mt-3" v-if="data.main && data.main.feels_like !== undefined">
+            Feels Like: {{ data.main.feels_like }} | Sunset: 18:20
+          </div>
+        </div>
 
 
       </div>
@@ -364,4 +366,5 @@ text-align: center; */
     opacity: 1;
     /* background-color: #e38262; */
   }
-}</style>
+}
+</style>
