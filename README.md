@@ -32,7 +32,7 @@ npm run build
 2. TailwindCSS-For designing project
 
 ## Project Explanation
-The Vue weather app using Vue JS and TailwindCSS from setting project to fetching weather data and displaying it in User interface.Api used from OpenWeatheMap.The project include error handling,javascript networking,fetching data.
+The Vue weather app using Vue JS and TailwindCSS from setting project to fetching weather data and displaying it in User interface.Api used from OpenWeatherMap.The project include error handling,javascript networking,fetching data.
 
 ## Project Development
 1. Vite-
